@@ -1,0 +1,26 @@
+{
+  "name": "adin-avivs-website-2.0",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "rollup -c --environment BUILD:production",
+    "dev": "rollup -c -w",
+    "start": "sirv public"
+  },
+  "devDependencies": {
+    "@rollup/plugin-commonjs": "^22.0.2",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.78.1",
+    "rollup-plugin-json-parse": "^1.1.5",
+    "rollup-plugin-livereload": "^1.3.0",
+    "rollup-plugin-svelte": "^7.1.0",
+    "rollup-plugin-terser": "^5.3.1",
+    "svelte": "^3.0.0"
+  },
+  "dependencies": {
+    "@rollup/plugin-json": "^4.0.3",
+    "@smui/switch": "^1.1.0",
+    "rollup-plugin-postcss": "^2.9.0",
+    "sirv-cli": "^0.4.6",
+    "svelte-i18n": "^3.0.3"
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "navbar": {
+        "Home": "Home",
+        "Products": "Products",
+        "My Skills": "My Skills",
+        "Contact Me": "Contact Me",
+        "config": "Configuration"
+    },
+    "landing": {
+        "title": "Hi, I'm Adin Aviv",
+        "subtitle": "I'm an engineering student with a strong interest in software development",
+        "call-to-action": "MY PROJECTS",
+        "call-to-action-secondary": "MESSAGE ME"
+    },
+    "home": {
+        "title": "My Projects",
+        "subtitle": "Swipe!",
+        "call-to-action-secondary": "READ MORE",
+        "call-to-action": "SEE LIVE",
+        "disabled": "COMING SOON!",
+        "contact": "LET'S TALK ABOUT THIS"
+    },
+    "skills": {
+        "title": "My Skills",
+        "subtitle": "Click on them to learn more!"
+    },
+    "contact-me": {
+        "title": "Contact Me",
+        "subtitle": "Send me a message here or email me at ",
+        "title_networks": "Also find me at..."
+    }
+}
