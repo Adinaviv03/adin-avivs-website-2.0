@@ -54,19 +54,101 @@
   $: locale.set($langStore);
 
   //Cerrar modal cuando clickean afuera
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     if (!e.target.closest(".modal") && !e.target.closest("#settings")) {
       showModal = false;
     }
   });
 
   //Mismo para el overlay
-  document.addEventListener("click", e => {
+  document.addEventListener("click", (e) => {
     if (!e.target.closest("#sidenav") && !e.target.closest(".menu")) {
       overlay = false;
     }
   });
 </script>
+
+<svelte:head>
+  {#if lightMode}
+    <style>
+      :root {
+        --bg-dark: #e4e4e4;
+        --bg-light: white;
+        --bg-light-hover: #f2f2f2;
+        --text: #121212;
+        --text-secondary: #353535;
+
+        --gradient-1: #8fbcbb;
+        --gradient-2: #88c0d0;
+        --gradient-3: #81a1c1;
+        --gradient-4: #5e81ac;
+        --gradient-5: #325f96;
+      }
+    </style>
+  {/if}
+</svelte:head>
+
+<nav class="navbar">
+  <div class="container">
+    <button on:click={() => ($activeStore = "Landing")}>
+      <h3>Adin Aviv</h3>
+    </button>
+    <div class="links">
+      <NavLink keyword="Home" {src} cat={false} />
+      <NavLink keyword="Products" {src} cat={false} />
+      <NavLink keyword="My Skills" {src} cat={false} />
+      <NavLink keyword="Contact Me" {src} cat={false} />
+      <button id="settings" on:click={toggleModal}>
+        <img src="./svg/settings.svg" alt="Settings" width="20" height="20" />
+      </button>
+      <button class="menu" on:click={toggleOverlay}>
+        <img src="./svg/hamburger.svg" alt="Menu" width="30" height="18" />
+      </button>
+    </div>
+  </div>
+</nav>
+
+{#if overlay}
+  <aside
+    transition:fly={{ x: 500, duration: 300, easing: circInOut }}
+    id="sidenav"
+  >
+    <button class="close" on:click={toggleOverlay}>
+      <img src="./svg/close.svg" alt="Close" />
+    </button>
+    <NavLink keyword="Home" {src} cat={p} />
+    <NavLink keyword="Products" {src} cat={p} />
+    <NavLink keyword="My Skills" {src} cat={p} />
+    <NavLink keyword="Contact Me" {src} cat={p} />
+  </aside>
+{/if}
+<BotNav />
+
+{#if showModal}
+  <div class="modal" in:fade={{ duration: 300 }}>
+    <header>
+      <h2>{$_("navbar.config")}</h2>
+      <button on:click={() => (showModal = false)} id="close">
+        <img src="./svg/close.svg" alt="Close" width="22" height="22" />
+      </button>
+    </header>
+    <p>
+      <img
+        src="./svg/night.svg"
+        alt="Switch to Dark Theme"
+        width="30"
+        height="30"
+      />
+      <Switch bind:checked={lightMode} />
+      <img
+        src="./svg/day.svg"
+        alt="Switch to Light Theme"
+        width="30"
+        height="30"
+      />
+    </p>
+  </div>
+{/if}
 
 <style>
   nav.navbar {
@@ -100,8 +182,6 @@
   .links > button:not(.menu) {
     padding: 0 10px;
   }
-
-
 
   .menu {
     float: right;
@@ -182,7 +262,7 @@
     margin-top: 7px;
   } */
 
-  img:not([alt="Adin Aviv"]) {
+  img:not([alt="Federico Varela"]) {
     margin-top: -3px;
   }
 
@@ -205,96 +285,3 @@
     margin-bottom: 60px;
   }
 </style>
-
-<svelte:head>
-  {#if lightMode}
-    <style>
-      :root {
-        --bg-dark: #e4e4e4;
-        --bg-light: white;
-        --bg-light-hover: #f2f2f2;
-        --text: #121212;
-        --text-secondary: #353535;
-
-        --gradient-1: #8FBCBB;
-        --gradient-2: #88C0D0;
-        --gradient-3: #81A1C1;
-        --gradient-4: #5E81AC;
-        --gradient-5: #325f96;
-      }
-    </style>
-  {/if}
-</svelte:head>
-
-<nav class="navbar">
-  <div class="container">
-    <button on:click={() => ($activeStore = 'Landing')}>
-      <img src="./images/logo.png" alt="Adin Aviv" height="50" />
-    </button>
-    <div class="links">
-      <NavLink keyword="Home" {src} cat={false} />
-      <NavLink keyword="Products" {src} cat={false} />
-      <NavLink keyword="My Skills" {src} cat={false} />
-      <NavLink keyword="Contact Me" {src} cat={false} />
-      <button id="settings" on:click={toggleModal}>
-        <img src="./svg/settings.svg" alt="Settings" width="20" height="20" />
-      </button>
-      <button class="menu" on:click={toggleOverlay}>
-        <img src="./svg/hamburger.svg" alt="Menu" width="30" height="18" />
-      </button>
-    </div>
-  </div>
-</nav>
-
-{#if overlay}
-  <aside
-    transition:fly={{ x: 500, duration: 300, easing: circInOut }}
-    id="sidenav">
-    <button class="close" on:click={toggleOverlay}>
-      <img src="./svg/close.svg" alt="Close" />
-    </button>
-    <NavLink keyword="Home" {src} cat={p} />
-    <NavLink keyword="Products" {src} cat={p} />
-    <NavLink keyword="My Skills" {src} cat={p} />
-    <NavLink keyword="Contact Me" {src} cat={p} />
-  </aside>
-{/if}
-<BotNav />
-
-{#if showModal}
-  <div class="modal" in:fade={{ duration: 300 }}>
-    <header>
-      <h2>{$_('navbar.config')}</h2>
-      <button on:click={() => (showModal = false)} id="close">
-        <img src="./svg/close.svg" alt="Close" width="22" height="22" />
-      </button>
-    </header>
-    <p>
-      <img
-        src="./svg/night.svg"
-        alt="Switch to Dark Theme"
-        width="30"
-        height="30" />
-      <Switch bind:checked={lightMode} />
-      <img
-        src="./svg/day.svg"
-        alt="Switch to Light Theme"
-        width="30"
-        height="30" />
-    </p>
-    <p>
-      <img
-        src="./images/en.png"
-        alt="Switch to English"
-        width="30"
-        height="20" />
-      <Switch bind:checked={langBuffer} />
-      <img
-        src="./images/es.png"
-        alt="Cambiar a español"
-        width="30"
-        height="20" />
-
-    </p>
-  </div>
-{/if}
