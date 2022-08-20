@@ -107,7 +107,7 @@
     </div>
   </div>
 </nav>
-
+ 
 {#if overlay}
   <aside
     transition:fly={{ x: 500, duration: 300, easing: circInOut }}
@@ -262,7 +262,7 @@
     margin-top: 7px;
   } */
 
-  img:not([alt="Federico Varela"]) {
+  img:not([alt="Adin Aviv"]) {
     margin-top: -3px;
   }
 
@@ -273,7 +273,7 @@
   }
 
   #close {
-    color: rgb(168, 42, 42);
+    color: rgb(163, 42, 42);
     margin-top: -20px;
     float: right;
     font-weight: 600;
