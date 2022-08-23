@@ -19,7 +19,7 @@ import {_} from "svelte-i18n";
     color: var(--accent);
     padding: 1rem min(15px, 10%);
     transition: background-color 200ms;
-    margin-top: -9px;
+    margin-top: 5px;
     border-bottom: 2px solid transparent;
   }
 
@@ -64,6 +64,11 @@ import {_} from "svelte-i18n";
     border-bottom: 1px solid transparent;
   }
 
+  button.primary:active, button.secondary:active {
+    border-bottom: 2px solid rgba(245, 245, 245, 0.226);
+    transform: scale(0.95);
+
+  }
   @media only screen and (max-width: 683px){
     button:not(.bottom):not(.primary){
       display: none;

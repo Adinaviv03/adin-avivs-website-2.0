@@ -35,12 +35,12 @@ export const skills = {
     {
       "title": "Education",
       "icon": "./svg/education.svg",
-      "content": `I am awesome. You are not.`
+      "content": `I am currently in my second year at McMaster University, studying electrical engineering.`
     },
     {
-      "title": "Languages",
+      "title": "Skills",
       "icon": "./svg/languages.svg",
-      "content": ``
+      "content": `Organization, Leadership, Teamwork, Python, C(learning), MatLab, Inventor`
     }
   ],
 }

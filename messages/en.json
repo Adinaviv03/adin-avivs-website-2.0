@@ -1,7 +1,7 @@
 {
     "navbar": {
-        "Home": "Home",
-        "Products": "Products",
+        "Home": "My Projects",
+        "Products": "Things I've built",
         "My Skills": "My Skills",
         "Contact Me": "Contact Me",
         "config": "Configuration"
@@ -26,7 +26,7 @@
     },
     "contact-me": {
         "title": "Contact Me",
-        "subtitle": "Send me a message here or email me at ",
-        "title_networks": "Also find me at..."
+        "subtitle": "",
+        "title_networks": "Sites you can contact me on..."
     }
 }
