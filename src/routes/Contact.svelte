@@ -32,7 +32,7 @@
   <a rel="nofollow" href="https://github.com/adinaviv03">
     <img src="./svg/github.svg" alt="My Github" />
   </a>
-  <a rel="nofollow" href="https://linkedin.com/in/adin-aviv-59bb951a5ff">
+  <a rel="nofollow" href="https://ca.linkedin.com/in/adin-aviv-59bb951a5">
     <img src="./svg/linkedin.svg" alt="My LinkedIn" />
   </a>
 </aside>

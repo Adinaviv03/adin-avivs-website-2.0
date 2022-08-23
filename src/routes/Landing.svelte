@@ -91,22 +91,19 @@
     </button>
     <button
       class="transparente no-theme"
-      on:click={() => ($activeStore = 'Contact Me')}>
+      on:click={() => ($activeStore = 'Contact me')}>
       {$_('landing.call-to-action-secondary')}
     </button>
   </section>
   <aside>
     <ul>
       <li>
-        <a href="https://stackoverflow.com/users/11141825/adin-aviv">
-          StackOverflow
+        <a href="https://ca.linkedin.com/in/adin-aviv-59bb951a5">
+          LinkedIn
         </a>
       </li>
       <li>
-        <a href="https://github.com/AdinAviv">Github</a>
-      </li>
-      <li>
-        <a href="https://dev.to/adinaviv">Dev.to</a>
+        <a href="https://github.com/AdinAviv03">Github</a>
       </li>
     </ul>
   </aside>
